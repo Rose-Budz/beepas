@@ -1,0 +1,21 @@
+pre-commit:
+  parallel: true
+  commands:
+    # Auto-fix linting issues, then check again to catch unfixable issues
+    lint:
+      glob: "*.{ts,tsx}"
+      run: pnpm eslint --fix {staged_files} && git add {staged_files} && pnpm eslint {staged_files}
+    # Auto-format code
+    format:
+      glob: "*.{ts,tsx,json,css}"
+      run: pnpm prettier --write {staged_files} && git add {staged_files}
+    # Spell check - warning only, doesn't block commit
+    spell:
+      glob: "*.{ts,tsx}"
+      run: pnpm cspell {staged_files} || true
+    # Type checking - can't auto-fix, will fail on errors
+    types:
+      run: pnpm tsc --noEmit
+    # Auto-fix unused exports, then check again
+    knip:
+      run: pnpm knip --fix && pnpm knip

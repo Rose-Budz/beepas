@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+.react-router/
+.DS_Store
+*.pem
+npm-debug.log*
+.env*.local
+.turbo
+.vercel
+*.tsbuildinfo

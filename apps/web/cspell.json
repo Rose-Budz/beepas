@@ -1,0 +1,13 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": ["Beepa", "Beepas", "Vite", "Vercel", "radix", "pnpm"],
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    "build/**",
+    ".react-router/**",
+    "*.css.ts",
+    "pnpm-lock.yaml"
+  ]
+}
