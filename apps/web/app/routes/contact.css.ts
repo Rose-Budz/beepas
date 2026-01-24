@@ -37,14 +37,20 @@ export const contactIcon = style({
 });
 
 export const contactLabel = style({
+  fontFamily: vars.fontFamily.body,
   fontSize: vars.fontSize.lg,
-  fontWeight: 700,
+  fontWeight: vars.fontWeight.bold,
+  lineHeight: vars.lineHeight.snug,
+  letterSpacing: vars.letterSpacing.normal,
   color: vars.color.brand.primary,
   marginBottom: vars.space.sm,
 });
 
 export const contactValue = style({
+  fontFamily: vars.fontFamily.body,
   fontSize: vars.fontSize.base,
+  fontWeight: vars.fontWeight.normal,
+  lineHeight: vars.lineHeight.normal,
+  letterSpacing: vars.letterSpacing.normal,
   color: vars.color.text.secondary,
-  lineHeight: 1.6,
 });

@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { header, nav, logo, navLinks, navLink, mobileMenuButton } from './Header.css';
+import { header, nav, logo, logoImage, navLinks, navLink, mobileMenuButton } from './Header.css';
 import { useState } from 'react';
 import { MobileMenu } from './MobileMenu';
 
@@ -17,7 +17,7 @@ export function Header() {
     <header className={header}>
       <nav className={nav}>
         <Link to="/" className={logo}>
-          Beepa's
+          <img src="/logo/logo-horizontal.jpg" alt="Beepa's" className={logoImage} />
         </Link>
 
         <ul className={navLinks}>

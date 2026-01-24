@@ -56,10 +56,13 @@ export const menuLinks = style({
 });
 
 export const menuLink = style({
+  fontFamily: vars.fontFamily.body,
+  fontSize: vars.fontSize.lg,
+  fontWeight: vars.fontWeight.semibold,
+  lineHeight: vars.lineHeight.snug,
+  letterSpacing: vars.letterSpacing.normal,
   color: vars.color.text.primary,
   textDecoration: 'none',
-  fontSize: vars.fontSize.lg,
-  fontWeight: 600,
   display: 'block',
   padding: vars.space.sm,
   transition: 'color 0.2s ease',

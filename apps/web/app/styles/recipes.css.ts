@@ -6,8 +6,11 @@ export const button = recipe({
     padding: `${vars.space.sm} ${vars.space.lg}`,
     borderRadius: vars.radius.md,
     border: 'none',
+    fontFamily: vars.fontFamily.body,
     fontSize: vars.fontSize.base,
-    fontWeight: 600,
+    fontWeight: vars.fontWeight.semibold,
+    lineHeight: vars.lineHeight.tight,
+    letterSpacing: vars.letterSpacing.normal,
     cursor: 'pointer',
     transition: 'all 0.2s ease',
     display: 'inline-flex',
@@ -29,6 +32,7 @@ export const button = recipe({
         color: vars.color.text.inverse,
         ':hover': {
           backgroundColor: vars.color.brand.secondary,
+          color: vars.color.text.inverse,
         },
       },
       secondary: {
@@ -93,5 +97,42 @@ export const card = recipe({
   },
   defaultVariants: {
     elevation: 'raised',
+  },
+});
+
+export const imageContainer = recipe({
+  base: {
+    borderRadius: vars.radius.lg,
+    overflow: 'hidden',
+    display: 'block',
+  },
+  variants: {
+    background: {
+      // For images with white backgrounds, use white container
+      white: {
+        backgroundColor: vars.color.background.secondary,
+        padding: vars.space.md,
+      },
+      // For images with transparent or matching backgrounds
+      transparent: {
+        backgroundColor: 'transparent',
+      },
+      // For images that need visual separation
+      bordered: {
+        border: `2px solid ${vars.color.border.medium}`,
+        backgroundColor: vars.color.background.secondary,
+        padding: vars.space.sm,
+      },
+      // Ornate frame style (mimicking the logo's gold oval frame)
+      framed: {
+        border: `4px double ${vars.color.brand.secondary}`,
+        backgroundColor: vars.color.background.secondary,
+        padding: vars.space.md,
+        boxShadow: `inset 0 0 0 1px ${vars.color.border.light}`,
+      },
+    },
+  },
+  defaultVariants: {
+    background: 'white',
   },
 });

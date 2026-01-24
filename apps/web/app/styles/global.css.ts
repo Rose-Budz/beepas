@@ -1,5 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css';
-import { lightTheme, vars } from './theme.css';
+import { vars } from './theme.css';
 
 globalStyle('*, *::before, *::after', {
   boxSizing: 'border-box',
@@ -10,13 +10,15 @@ globalStyle('*, *::before, *::after', {
 globalStyle('html', {
   fontFamily: vars.fontFamily.body,
   fontSize: vars.fontSize.base,
+  fontWeight: vars.fontWeight.normal,
+  lineHeight: vars.lineHeight.normal,
+  letterSpacing: vars.letterSpacing.normal,
   color: vars.color.text.primary,
   backgroundColor: vars.color.background.primary,
 });
 
 globalStyle('body', {
   minHeight: '100vh',
-  lineHeight: 1.6,
   '@media': {
     '(prefers-reduced-motion: reduce)': {
       scrollBehavior: 'auto',
@@ -25,9 +27,40 @@ globalStyle('body', {
 });
 
 globalStyle('h1, h2, h3, h4, h5, h6', {
+  fontWeight: vars.fontWeight.bold,
+});
+
+globalStyle('h1', {
   fontFamily: vars.fontFamily.heading,
-  lineHeight: 1.2,
-  fontWeight: 700,
+  fontSize: vars.fontSize['4xl'],
+  lineHeight: vars.lineHeight.tight,
+  letterSpacing: vars.letterSpacing.tight,
+});
+
+globalStyle('h2, h3, h4, h5, h6', {
+  fontFamily: vars.fontFamily.body, // Montserrat for all subheadings
+  lineHeight: vars.lineHeight.snug,
+  letterSpacing: vars.letterSpacing.normal,
+});
+
+globalStyle('h2', {
+  fontSize: vars.fontSize['2xl'],
+});
+
+globalStyle('h3', {
+  fontSize: vars.fontSize.xl,
+});
+
+globalStyle('h4', {
+  fontSize: vars.fontSize.lg,
+});
+
+globalStyle('h5', {
+  fontSize: vars.fontSize.base,
+});
+
+globalStyle('h6', {
+  fontSize: vars.fontSize.sm,
 });
 
 globalStyle('a', {

@@ -2,10 +2,10 @@ export interface Product {
   id: string;
   name: string;
   description: string;
-  price: number;
+  price?: number;
   image: string;
   category: 'sauce' | 'pickled' | 'preserved';
-  inStock: boolean;
+  inStock?: boolean;
 }
 
 export interface GalleryImage {

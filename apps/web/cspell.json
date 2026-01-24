@@ -1,7 +1,7 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["Beepa", "Beepas", "Vite", "Vercel", "radix", "pnpm"],
+  "words": ["Beepa", "Beepas", "Vite", "Vercel", "radix", "pnpm", "Farmville", "Palatino", "srcs", "Fjalstad", "Playfair", "wisconsins", "Segoe", "Neue"],
   "ignorePaths": [
     "node_modules/**",
     "dist/**",

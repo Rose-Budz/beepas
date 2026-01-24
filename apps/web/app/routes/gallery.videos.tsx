@@ -38,9 +38,7 @@ export default function GalleryVideos() {
               <div className={playButton}>▶</div>
               <div className={videoInfo}>
                 <h3 className={videoTitle}>{video.title}</h3>
-                {video.description && (
-                  <p className={videoDescription}>{video.description}</p>
-                )}
+                {video.description && <p className={videoDescription}>{video.description}</p>}
               </div>
             </div>
           ))}

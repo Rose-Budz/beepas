@@ -19,12 +19,7 @@ export function Button({
   disabled = false,
 }: ButtonProps) {
   return (
-    <button
-      type={type}
-      className={button({ variant, size })}
-      onClick={onClick}
-      disabled={disabled}
-    >
+    <button type={type} className={button({ variant, size })} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );

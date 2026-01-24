@@ -30,6 +30,11 @@
     "check": {
       "dependsOn": ["lint", "typecheck", "spell", "knip"]
     },
+    "fix": {
+      "dependsOn": ["^fix"],
+      "outputs": [],
+      "cache": false
+    },
     "clean": {
       "cache": false
     }

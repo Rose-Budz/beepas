@@ -1,3 +1,4 @@
+import type { KeyboardEvent } from 'react';
 import { Link } from 'react-router';
 import { overlay, menu, closeButton, menuLinks, menuLink } from './MobileMenu.css';
 
@@ -8,9 +9,24 @@ interface MobileMenuProps {
 }
 
 export function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) {
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onClose();
+    }
+  };
+
   return (
     <>
-      <div className={overlay} data-open={isOpen} onClick={onClose} />
+      <div
+        className={overlay}
+        data-open={isOpen}
+        onClick={onClose}
+        onKeyDown={handleKeyDown}
+        role="button"
+        tabIndex={0}
+        aria-label="Close menu overlay"
+      />
       <div className={menu} data-open={isOpen}>
         <button className={closeButton} onClick={onClose} aria-label="Close menu">
           ✕

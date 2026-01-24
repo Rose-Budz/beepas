@@ -15,8 +15,12 @@ export const footerContent = style({
 });
 
 export const footerText = style({
-  color: vars.color.text.secondary,
+  fontFamily: vars.fontFamily.body,
   fontSize: vars.fontSize.sm,
+  fontWeight: vars.fontWeight.normal,
+  lineHeight: vars.lineHeight.normal,
+  letterSpacing: vars.letterSpacing.normal,
+  color: vars.color.text.secondary,
   marginBottom: vars.space.sm,
 });
 

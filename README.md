@@ -11,11 +11,11 @@ If you haven't pushed this to GitHub yet:
 chmod +x setup-github.sh
 ./setup-github.sh
 
-# Create and push to GitHub (public repo)
-gh repo create beepas --public --source=. --remote=origin --push
+# Create and push to GitHub in Rose-Budz organization (public repo)
+gh repo create Rose-Budz/beepas --public --source=. --remote=origin --push
 
-# Or for a private repo
-gh repo create beepas --private --source=. --remote=origin --push
+# Or for a private repo in Rose-Budz organization
+gh repo create Rose-Budz/beepas --private --source=. --remote=origin --push
 ```
 
 The setup script will:

@@ -8,9 +8,7 @@ export default function handleRequest(
   responseHeaders: Headers,
   routerContext: EntryContext
 ) {
-  const html = renderToString(
-    <ServerRouter context={routerContext} url={request.url} />
-  );
+  const html = renderToString(<ServerRouter context={routerContext} url={request.url} />);
 
   responseHeaders.set('Content-Type', 'text/html');
 

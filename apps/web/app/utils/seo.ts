@@ -20,7 +20,7 @@ export function createMeta({
   description: string;
   image?: string;
 }): MetaDescriptor[] {
-  const siteName = "Beepa's Country Goods";
+  const siteName = "Beepa's";
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
 
   const meta: MetaDescriptor[] = [

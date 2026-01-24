@@ -20,13 +20,27 @@ export const nav = style({
 });
 
 export const logo = style({
-  fontSize: vars.fontSize['2xl'],
   fontFamily: vars.fontFamily.heading,
-  fontWeight: 700,
+  fontSize: vars.fontSize['2xl'],
+  fontWeight: vars.fontWeight.normal, // Alfa Slab One only has 400 weight
+  lineHeight: vars.lineHeight.tight,
+  letterSpacing: vars.letterSpacing.tight,
   color: vars.color.brand.primary,
   textDecoration: 'none',
+  display: 'flex',
+  alignItems: 'center',
   ':hover': {
-    color: vars.color.brand.secondary,
+    opacity: 0.8,
+  },
+});
+
+export const logoImage = style({
+  height: '50px',
+  width: 'auto',
+  '@media': {
+    '(max-width: 768px)': {
+      height: '40px',
+    },
   },
 });
 
@@ -44,10 +58,13 @@ export const navLinks = style({
 });
 
 export const navLink = style({
+  fontFamily: vars.fontFamily.body,
+  fontSize: vars.fontSize.base,
+  fontWeight: vars.fontWeight.semibold,
+  lineHeight: vars.lineHeight.snug,
+  letterSpacing: vars.letterSpacing.normal,
   color: vars.color.text.primary,
   textDecoration: 'none',
-  fontWeight: 600,
-  fontSize: vars.fontSize.base,
   transition: 'color 0.2s ease',
   ':hover': {
     color: vars.color.brand.primary,

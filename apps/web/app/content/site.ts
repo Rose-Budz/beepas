@@ -1,15 +1,15 @@
 import type { SiteInfo } from '@/types/content';
 
 export const siteInfo: SiteInfo = {
-  name: "Beepa's Country Goods",
-  tagline: 'Handmade Artisan Sauces & Preserves',
+  name: "Beepa's",
+  tagline: 'Made Local. Made Right.',
   description:
-    'Discover the authentic taste of country-style sauces, pickled vegetables, and preserved goods crafted with love and traditional recipes.',
-  email: 'contact@beepascountrygoods.com',
-  phone: '(555) 123-4567',
-  address: 'Country Lane, Farmville',
+    'Wisconsin-made jarred and canned goods including Bloody Mary mix, sauces, salsas, pickled vegetables, and chili starters. Built on family values and honest work.',
+  email: 'info@beepas.com',
+  phone: '(608) 555-JARS',
+  address: 'Beloit, Wisconsin',
   social: {
-    facebook: 'https://facebook.com/beepascountrygoods',
-    instagram: 'https://instagram.com/beepascountrygoods',
+    facebook: 'https://facebook.com/beepasfoods',
+    instagram: 'https://instagram.com/beepasfoods',
   },
 };

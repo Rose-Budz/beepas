@@ -1,5 +1,6 @@
 import { galleryImages } from '@/content/gallery-images';
 import { container, section, grid } from '@/styles/utils.css';
+import { ImageDialog } from '@/components/ui/ImageDialog';
 import {
   pageTitle,
   tabNav,
@@ -31,14 +32,16 @@ export default function GalleryImages() {
 
         <div className={grid}>
           {images.map((img) => (
-            <div key={img.id} className={imageCard}>
-              <img src={img.src} alt={img.alt} className={image} />
-              {img.caption && (
-                <div className={imageCaption}>
-                  <p className={imageCaptionText}>{img.caption}</p>
-                </div>
-              )}
-            </div>
+            <ImageDialog key={img.id} src={img.src} alt={img.alt}>
+              <div className={imageCard}>
+                <img src={img.src} alt={img.alt} className={image} />
+                {img.caption && (
+                  <div className={imageCaption}>
+                    <p className={imageCaptionText}>{img.caption}</p>
+                  </div>
+                )}
+              </div>
+            </ImageDialog>
           ))}
         </div>
       </div>

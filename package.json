@@ -10,6 +10,7 @@
     "spell": "turbo spell",
     "knip": "turbo knip",
     "check": "turbo check",
+    "fix": "turbo fix",
     "clean": "turbo clean && rm -rf node_modules"
   },
   "devDependencies": {
