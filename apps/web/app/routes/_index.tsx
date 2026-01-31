@@ -2,6 +2,7 @@ import { vars } from '@/styles/theme.css';
 import { container, section } from '@/styles/utils.css';
 import { Button } from '@/components/ui/Button';
 import { Link } from 'react-router';
+import clsx from 'clsx';
 import {
   hero,
   heroTitle,
@@ -21,6 +22,11 @@ import {
   principleBullet,
   tagline,
   contentContainer,
+  awardsLayout,
+  awardsImageCol,
+  awardsListCol,
+  awardsList,
+  awardsSection,
 } from './_index.css';
 import { homeContent } from '@/content/home';
 
@@ -64,7 +70,39 @@ export default function Index() {
         <div className={container}>
           <h3 className={sectionLabel}>{homeContent.started.title}</h3>
           <h2 className={sectionTitle}>{homeContent.started.subtitle}</h2>
-          <p className={contentParagraph}>{homeContent.started.content}</p>
+          {/* Render the started content paragraphs */}
+          {homeContent.started.content.split('\n\n').map((block, idx) => (
+            <p key={idx} className={contentParagraph}>
+              {block}
+            </p>
+          ))}
+
+          {/* Render awards from data, like whatWeMake.principles */}
+          {homeContent.started.awards && homeContent.started.awards.length > 0 && (
+            <div className={clsx(contentContainer, awardsSection)}>
+              <h4 className={sectionLabel}>{homeContent.started.awardsTitle}</h4>
+              {/* Layout: image on the left, awards list on the right (vanilla-extract classes) */}
+              <div className={awardsLayout}>
+                <div className={awardsImageCol}>
+                  <img
+                    src="/logo/wisconsin-state-fair-award-winner.jpg"
+                    alt="Awarded at the 2019 Wisconsin State Fair"
+                    className={awardBadge}
+                  />
+                </div>
+                <div className={awardsListCol}>
+                  <ul className={clsx(principlesList, awardsList)}>
+                    {homeContent.started.awards.map((award, index) => (
+                      <li key={index} className={principleItem}>
+                        <span className={principleBullet}>🏆</span>
+                        {award}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -90,11 +128,6 @@ export default function Index() {
           </div>
           <div className={awardsContainer}>
             <img
-              src="/logo/wisconsin-state-fair-award-winner.jpg"
-              alt="Wisconsin State Fair Award Winner"
-              className={awardBadge}
-            />
-            <img
               src="/logo/wisconsins-best-stamp.jpg"
               alt="Wisconsin's Best"
               className={awardBadge}
@@ -107,7 +140,7 @@ export default function Index() {
       <section className={section} style={{ backgroundColor: vars.color.background.secondary }}>
         <div className={container}>
           <h2 className={sectionTitle}>{homeContent.closing.title}</h2>
-          <p className={`${contentParagraph} ${centeredContent}`}>{homeContent.closing.content}</p>
+          <p className={clsx(contentParagraph, centeredContent)}>{homeContent.closing.content}</p>
         </div>
       </section>
     </div>

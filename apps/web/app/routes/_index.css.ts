@@ -69,10 +69,10 @@ export const beepaImage = style({
   width: '100%',
   height: 'auto',
   borderRadius: vars.radius.lg,
-  boxShadow: vars.shadow.md,
+  boxShadow: 'none',
   backgroundColor: '#FFFFFF', // White background for logo image
   padding: vars.space.md,
-  border: `4px double ${vars.color.brand.secondary}`, // Ornate double border
+  border: 'none',
 });
 
 export const awardsContainer = style({
@@ -90,7 +90,7 @@ export const awardBadge = style({
   backgroundColor: '#FFFFFF',
   padding: vars.space.sm,
   borderRadius: vars.radius.md,
-  border: `2px solid ${vars.color.border.medium}`,
+  border: 'none',
   '@media': {
     '(max-width: 768px)': {
       height: '80px',
@@ -128,7 +128,7 @@ export const contentParagraph = style({
   lineHeight: vars.lineHeight.relaxed,
   letterSpacing: vars.letterSpacing.normal,
   maxWidth: '800px',
-  margin: '0 auto',
+  margin: `0 auto ${vars.space.lg}`,
   whiteSpace: 'pre-line',
 });
 
@@ -153,19 +153,50 @@ export const principlesList = style({
   letterSpacing: vars.letterSpacing.normal,
   listStyle: 'none',
   padding: 0,
+  marginTop: vars.space.md,
   marginBottom: vars.space.xl,
 });
 
 export const principleItem = style({
-  paddingLeft: vars.space.lg,
+  display: 'flex',
+  alignItems: 'center',
+  gap: vars.space.sm,
   marginBottom: vars.space.sm,
-  position: 'relative',
+  paddingLeft: 0,
 });
 
 export const principleBullet = style({
-  position: 'absolute',
-  left: 0,
+  display: 'inline-block',
+  width: '1.25rem',
+  flex: '0 0 1.25rem',
+  textAlign: 'left',
   color: vars.color.brand.primary,
+});
+
+// New styles for awards layout (image left, list right) and spacing
+export const awardsLayout = style({
+  display: 'flex',
+  gap: vars.space.lg,
+  alignItems: 'center', // vertically center image and list
+});
+
+export const awardsImageCol = style({
+  flex: '0 0 140px',
+});
+
+export const awardsListCol = style({
+  flex: '1 1 auto',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+});
+
+export const awardsList = style({
+  marginTop: 0,
+});
+
+export const awardsSection = style({
+  marginTop: vars.space.lg,
 });
 
 export const tagline = style({

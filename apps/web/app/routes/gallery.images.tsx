@@ -1,6 +1,8 @@
 import { galleryImages } from '@/content/gallery-images';
 import { container, section, grid } from '@/styles/utils.css';
 import { ImageDialog } from '@/components/ui/ImageDialog';
+import clsx from 'clsx';
+import { Card } from '@/components/ui/Card';
 import {
   pageTitle,
   tabNav,
@@ -11,18 +13,16 @@ import {
   imageCaption,
   imageCaptionText,
 } from './gallery.css';
+import { productImage, productDescription } from './products.css';
 
 export default function GalleryImages() {
-  // In SPA mode, we use data directly instead of loaders
-  const images = galleryImages;
-
   return (
     <div className={section}>
       <div className={container}>
         <h1 className={pageTitle}>Gallery</h1>
 
         <div className={tabNav}>
-          <a href="/gallery/images" className={`${tabLink} ${activeTab}`}>
+          <a href="/gallery/images" className={clsx(tabLink, activeTab)}>
             Images
           </a>
           <a href="/gallery/videos" className={tabLink}>
@@ -31,17 +31,13 @@ export default function GalleryImages() {
         </div>
 
         <div className={grid}>
-          {images.map((img) => (
-            <ImageDialog key={img.id} src={img.src} alt={img.alt}>
-              <div className={imageCard}>
-                <img src={img.src} alt={img.alt} className={image} />
-                {img.caption && (
-                  <div className={imageCaption}>
-                    <p className={imageCaptionText}>{img.caption}</p>
-                  </div>
-                )}
-              </div>
-            </ImageDialog>
+          {galleryImages.map((img) => (
+            <Card key={img.id} elevation="raised">
+              <ImageDialog src={img.src} alt={img.alt}>
+                <img src={img.src} alt={img.alt} className={productImage} />
+              </ImageDialog>
+              {img.caption && <p className={productDescription}>{img.caption}</p>}
+            </Card>
           ))}
         </div>
       </div>

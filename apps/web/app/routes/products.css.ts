@@ -4,6 +4,7 @@ import { vars } from '@/styles/theme.css';
 export const productImage = style({
   width: '100%',
   objectFit: 'cover',
+  height: '320px',
   borderRadius: vars.radius.lg, // Rounded top corners to match card
   marginBottom: vars.space.md,
   cursor: 'pointer',

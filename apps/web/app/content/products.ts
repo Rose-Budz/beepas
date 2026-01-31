@@ -5,7 +5,7 @@ export const products: Product[] = [
     id: 'spaghetti-sauce',
     name: "Beepa's Spaghetti Sauce",
     description:
-      'Traditional Italian-style spaghetti sauce made with Wisconsin tomatoes and fresh herbs. Perfect for pasta night.',
+      'Traditional Italian-style spaghetti sauce made with fresh tomatoes and fresh herbs. Perfect for pasta night. 🏆 2019 Wisconsin State Fair — 1st Place',
     image: '/images/products/spaghetti-sauce.jpg',
     category: 'sauce',
   },
@@ -13,7 +13,7 @@ export const products: Product[] = [
     id: 'sloppy-joe-sauce',
     name: "Beepa's Sloppy Joe Sauce",
     description:
-      'Classic sloppy joe sauce with a perfect blend of savory and sweet. Just add ground beef for an easy family meal.',
+      'Classic sloppy joe sauce with a perfect blend of savory and sweet. Just add ground beef for an easy family meal. 🏆 2019 Wisconsin State Fair — 3rd Place',
     image: '/images/products/sloppy-joe-sauce.jpg',
     category: 'sauce',
   },
@@ -29,7 +29,7 @@ export const products: Product[] = [
     id: 'goulash-starter',
     name: "Beepa's Goulash Starter",
     description:
-      'Traditional goulash starter with rich tomato base and warming spices. A hearty comfort food classic.',
+      'Traditional goulash starter with rich tomato base and warming spices. A hearty comfort food classic. 🏆 2019 Wisconsin State Fair — 2nd Place',
     image: '/images/products/goulash-starter.jpg',
     category: 'sauce',
   },

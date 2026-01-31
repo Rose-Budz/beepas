@@ -18,7 +18,14 @@ export const homeContent = {
     title: 'How It Started',
     subtitle: 'From Garden Rows to Mason Jars',
     content:
-      "Justin learned early that good food doesn't need shortcuts. Years later, he started canning vegetables at home — the same way Beepa would've done it. No gimmicks. Just real ingredients and time put in.\n\nFriends tried it. Then friends of friends. Pretty soon, one jar turned into another, and Beepa's grew from there.",
+      "Justin learned early that good food doesn't need shortcuts. Years later, he started canning vegetables at home — the same way Beepa would've done it. No gimmicks. Just real ingredients and time put in.\n\nFriends tried it. Then friends of friends. Pretty soon, one jar turned into another, and Beepa's grew from there.\n\nIn the summer of 2019, Beepa’s took its products to the Wisconsin State Fair and swept the awards. Against more than 100 entries, the results spoke for themselves.",
+    awardsTitle: '2019 Wisconsin State Fair',
+    awards: [
+      'Spaghetti Sauce — 1st Place',
+      'Goulash Starter — 2nd Place',
+      'Sloppy Joe Sauce — 3rd Place',
+      'Bloody Mary Mix — Best in Division and 1st Place',
+    ],
   },
   whatWeMake: {
     title: 'What We Make',
@@ -26,9 +33,9 @@ export const homeContent = {
     content:
       "Today, Beepa's makes jarred and canned goods right here in Wisconsin — Bloody Mary mix, sauces, salsas, pickled vegetables, chili starters, and more.",
     principles: [
-      'Use good ingredients',
-      "Don't cut corners",
-      "Make something you're proud to put your name on",
+      'Only quality ingredients. No high fructose corn syrup. ',
+      "Old-fashioned canning, done the way it’s supposed to be.",
+      "Make something you're proud to put your name on. Don't cut corners.",
     ],
     tagline: "If it's not good enough for our own table, it doesn't leave the kitchen.",
   },

@@ -1,12 +1,18 @@
 import { defineConfig } from 'vite';
 import { reactRouter } from '@react-router/dev/vite';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
-import tsconfigPaths from 'vite-tsconfig-paths';
+import path from 'path';
 
 export default defineConfig({
   plugins: [
     reactRouter(),
-    vanillaExtractPlugin(),
-    tsconfigPaths(),
+    vanillaExtractPlugin({
+      identifiers: 'debug',
+    }),
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './app'),
+    },
+  },
 });

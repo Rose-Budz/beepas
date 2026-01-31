@@ -12,11 +12,9 @@ import {
   videoTitle,
   videoDescription,
 } from './gallery.css';
+import clsx from 'clsx';
 
 export default function GalleryVideos() {
-  // In SPA mode, we use data directly instead of loaders
-  const videos = galleryVideos;
-
   return (
     <div className={section}>
       <div className={container}>
@@ -26,13 +24,13 @@ export default function GalleryVideos() {
           <a href="/gallery/images" className={tabLink}>
             Images
           </a>
-          <a href="/gallery/videos" className={`${tabLink} ${activeTab}`}>
+          <a href="/gallery/videos" className={clsx(tabLink, activeTab)}>
             Videos
           </a>
         </div>
 
         <div className={grid}>
-          {videos.map((video) => (
+          {galleryVideos.map((video) => (
             <div key={video.id} className={videoCard}>
               <img src={video.thumbnail} alt={video.title} className={thumbnail} />
               <div className={playButton}>▶</div>
