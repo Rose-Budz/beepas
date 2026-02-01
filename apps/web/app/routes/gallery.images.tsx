@@ -8,10 +8,6 @@ import {
   tabNav,
   tabLink,
   activeTab,
-  imageCard,
-  image,
-  imageCaption,
-  imageCaptionText,
 } from './gallery.css';
 import { productImage, productDescription } from './products.css';
 
@@ -33,9 +29,7 @@ export default function GalleryImages() {
         <div className={grid}>
           {galleryImages.map((img) => (
             <Card key={img.id} elevation="raised">
-              <ImageDialog src={img.src} alt={img.alt}>
-                <img src={img.src} alt={img.alt} className={productImage} />
-              </ImageDialog>
+              <ImageDialog src={img.src} alt={img.alt} triggerClassName={productImage} />
               {img.caption && <p className={productDescription}>{img.caption}</p>}
             </Card>
           ))}

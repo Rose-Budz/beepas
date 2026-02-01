@@ -1,11 +1,11 @@
 import { products } from '@/content/products';
 import { container, section, grid } from '@/styles/utils.css';
 import { Card } from '@/components/ui/Card';
-import { ImageDialog } from '@/components/ui/ImageDialog';
 import { productImage, productName, productDescription, pageTitle } from './products.css';
+import { ImageDialog } from '@/components/ui/ImageDialog';
 
 export default function Products() {
-  // In SPA mode, we use data directly instead of loaders
+  console.log('🛍️ Products component rendering, product count:', products.length);
 
   return (
     <div className={section}>
@@ -14,9 +14,7 @@ export default function Products() {
         <div className={grid}>
           {products.map((product) => (
             <Card key={product.id} elevation="raised">
-              <ImageDialog src={product.image} alt={product.name}>
-                <img src={product.image} alt={product.name} className={productImage} />
-              </ImageDialog>
+              <ImageDialog src={product.image} alt={product.name} triggerClassName={productImage} />
               <h2 className={productName}>{product.name}</h2>
               <p className={productDescription}>{product.description}</p>
             </Card>
@@ -26,3 +24,6 @@ export default function Products() {
     </div>
   );
 }
+
+
+

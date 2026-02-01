@@ -76,3 +76,20 @@ export const closeButton = style({
     outlineOffset: '2px',
   },
 });
+
+export const triggerButton = style({
+  all: 'unset',
+  cursor: 'pointer',
+  display: 'inline-block',
+  border: 'none',
+  background: 'none',
+  padding: 0,
+  margin: 0,
+});
+
+export const triggerImage = style({
+  display: 'block',
+  width: '100%',
+  height: 'auto',
+  pointerEvents: 'none', // Let clicks pass through to the button
+});
