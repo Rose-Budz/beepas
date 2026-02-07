@@ -2,7 +2,7 @@ export const homeContent = {
   hero: {
     title: 'Enjoy the Flavor of a Wisconsin Tradition.',
     subtitle:
-      "Beepa's was built the same way it should be done — with hard work, fresh ingredients, and a lot of pride in where you come from. What started in a Beloit garden is now food you can bring to your own table.",
+      "Beepa's was built the way it should be done — with hard work, fresh ingredients, and a lot of pride in where you come from. What started in a Beloit garden is now food you can bring to your own table.",
     cta: {
       primary: { text: 'View Gallery', link: '/gallery' },
       secondary: { text: 'See Our Products', link: '/products' },
