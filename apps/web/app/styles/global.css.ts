@@ -3,7 +3,8 @@ import { vars } from './theme.css';
 
 // Seagull Bold font face
 globalFontFace('Seagull Bold', {
-  src: 'url("/fonts/Seagull-Bold.woff2") format("woff2")',
+  src: 'url("/fonts/Seagull-Bold.woff2") format("woff2"), url("Seagull-Bold.woff") format("woff")',
+
   fontWeight: 'bold',
   fontStyle: 'normal',
   fontDisplay: 'swap',
