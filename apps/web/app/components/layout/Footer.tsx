@@ -1,4 +1,11 @@
-import { footer, footerContent, footerText, socialLinks, socialLink } from './Footer.css';
+import {
+  footer,
+  footerContent,
+  footerText,
+  socialLinks,
+  socialLink,
+  socialIcon,
+} from './Footer.css';
 import { siteInfo } from '@/content/site';
 
 export function Footer() {
@@ -9,15 +16,25 @@ export function Footer() {
         <p className={footerText}>Made Local. Made Right. | Beloit, Wisconsin</p>
         <div className={socialLinks}>
           {siteInfo.social?.facebook && (
-            <a href={siteInfo.social.facebook} className={socialLink} aria-label="Facebook">
-              f
+            <a
+              href={siteInfo.social.facebook}
+              className={socialLink}
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/facebook.png" alt="Facebook" className={socialIcon} />
             </a>
           )}
-          {siteInfo.social?.instagram && (
-            <a href={siteInfo.social.instagram} className={socialLink} aria-label="Instagram">
-              📷
-            </a>
-          )}
+          <a
+            href="https://www.tiktok.com/@beepas11"
+            className={socialLink}
+            aria-label="TikTok"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/images/tiktok.png" alt="TikTok" className={socialIcon} />
+          </a>
         </div>
       </div>
     </footer>

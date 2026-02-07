@@ -1,5 +1,13 @@
-import { globalStyle } from '@vanilla-extract/css';
+import { globalStyle, globalFontFace } from '@vanilla-extract/css';
 import { vars } from './theme.css';
+
+// Seagull Bold font face
+globalFontFace('Seagull Bold', {
+  src: 'url("/fonts/Seagull-Bold.woff2") format("woff2")',
+  fontWeight: 'bold',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+});
 
 globalStyle('*, *::before, *::after', {
   boxSizing: 'border-box',
@@ -9,16 +17,21 @@ globalStyle('*, *::before, *::after', {
 
 globalStyle('html', {
   fontFamily: vars.fontFamily.body,
-  fontSize: vars.fontSize.base,
+  fontSize: '16px',
   fontWeight: vars.fontWeight.normal,
   lineHeight: vars.lineHeight.normal,
   letterSpacing: vars.letterSpacing.normal,
   color: vars.color.text.primary,
   backgroundColor: vars.color.background.primary,
+  scrollBehavior: 'smooth',
 });
 
 globalStyle('body', {
   minHeight: '100vh',
+  backgroundImage: 'url("/images/wood-background.jpg")',
+  backgroundSize: 'cover',
+  backgroundAttachment: 'fixed',
+  backgroundPosition: 'center',
   '@media': {
     '(prefers-reduced-motion: reduce)': {
       scrollBehavior: 'auto',
@@ -26,41 +39,50 @@ globalStyle('body', {
   },
 });
 
-globalStyle('h1, h2, h3, h4, h5, h6', {
-  fontWeight: vars.fontWeight.bold,
-});
-
 globalStyle('h1', {
   fontFamily: vars.fontFamily.heading,
-  fontSize: vars.fontSize['4xl'],
+  fontWeight: vars.fontWeight.bold,
+  color: vars.color.brand.primary,
+  textShadow: '1.5px 1.5px 0 #000',
+  fontSize: vars.fontSize['5xl'],
   lineHeight: vars.lineHeight.tight,
-  letterSpacing: vars.letterSpacing.tight,
+  // add a small positive letter spacing for improved readability
+  letterSpacing: '0.01em',
 });
 
 globalStyle('h2, h3, h4, h5, h6', {
-  fontFamily: vars.fontFamily.body, // Montserrat for all subheadings
-  lineHeight: vars.lineHeight.snug,
-  letterSpacing: vars.letterSpacing.normal,
+  fontFamily: vars.fontFamily.body,
+  fontWeight: vars.fontWeight.bold,
+  color: vars.color.brand.secondary,
 });
 
 globalStyle('h2', {
-  fontSize: vars.fontSize['2xl'],
+  fontSize: vars.fontSize['3xl'],
+  lineHeight: vars.lineHeight.snug,
 });
 
 globalStyle('h3', {
-  fontSize: vars.fontSize.xl,
+  fontSize: vars.fontSize['2xl'],
+  lineHeight: vars.lineHeight.snug,
 });
 
 globalStyle('h4', {
-  fontSize: vars.fontSize.lg,
+  fontSize: vars.fontSize.xl,
+  lineHeight: vars.lineHeight.snug,
 });
 
 globalStyle('h5', {
-  fontSize: vars.fontSize.base,
+  fontSize: vars.fontSize.lg,
 });
 
 globalStyle('h6', {
-  fontSize: vars.fontSize.sm,
+  fontSize: vars.fontSize.base,
+});
+
+globalStyle('p', {
+  fontFamily: vars.fontFamily.body,
+  fontSize: vars.fontSize.base,
+  lineHeight: vars.lineHeight.relaxed,
 });
 
 globalStyle('a', {
@@ -75,10 +97,15 @@ globalStyle('a:hover', {
 
 globalStyle('img', {
   maxWidth: '100%',
-  display: 'block',
+  height: 'auto',
 });
 
 globalStyle('button', {
   cursor: 'pointer',
-  fontFamily: 'inherit',
+  fontFamily: vars.fontFamily.body,
+});
+
+globalStyle('::selection', {
+  backgroundColor: vars.color.brand.primary,
+  color: vars.color.text.inverse,
 });

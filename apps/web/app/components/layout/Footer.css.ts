@@ -2,14 +2,13 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '@/styles/theme.css';
 
 export const footer = style({
-  backgroundColor: vars.color.background.secondary,
-  borderTop: `2px solid ${vars.color.border.medium}`,
+  backgroundColor: vars.color.brand.secondary,
   padding: `${vars.space.xl} ${vars.space.lg}`,
   marginTop: 'auto',
 });
 
 export const footerContent = style({
-  maxWidth: '1200px',
+  maxWidth: '1100px',
   margin: '0 auto',
   textAlign: 'center',
 });
@@ -19,23 +18,31 @@ export const footerText = style({
   fontSize: vars.fontSize.sm,
   fontWeight: vars.fontWeight.normal,
   lineHeight: vars.lineHeight.normal,
-  letterSpacing: vars.letterSpacing.normal,
-  color: vars.color.text.secondary,
+  color: vars.color.text.inverse,
   marginBottom: vars.space.sm,
+  opacity: 0.9,
 });
 
 export const socialLinks = style({
   display: 'flex',
   justifyContent: 'center',
-  gap: vars.space.md,
+  gap: vars.space.lg,
   marginTop: vars.space.md,
 });
 
 export const socialLink = style({
-  color: vars.color.brand.primary,
+  color: vars.color.text.inverse,
   fontSize: vars.fontSize.xl,
-  transition: 'color 0.2s ease',
+  transition: 'all 0.2s ease',
+  opacity: 0.8,
   ':hover': {
-    color: vars.color.brand.secondary,
+    opacity: 1,
+    transform: 'scale(1.1)',
   },
+});
+
+export const socialIcon = style({
+  width: '24px',
+  height: '24px',
+  display: 'inline-block',
 });

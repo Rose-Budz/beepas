@@ -1,16 +1,16 @@
-import { vars } from '@/styles/theme.css';
-import { container, section } from '@/styles/utils.css';
 import { Button } from '@/components/ui/Button';
 import { Link } from 'react-router';
 import clsx from 'clsx';
 import {
   hero,
+  heroCard,
   heroTitle,
   heroSubtitle,
   ctaButtons,
+  contentSection,
+  contentCard,
   storyGrid,
   beepaImage,
-  awardsContainer,
   awardBadge,
   sectionLabel,
   sectionTitle,
@@ -21,12 +21,12 @@ import {
   principleItem,
   principleBullet,
   tagline,
-  contentContainer,
   awardsLayout,
   awardsImageCol,
   awardsListCol,
   awardsList,
   awardsSection,
+  awardsContainer,
 } from './_index.css';
 import { homeContent } from '@/content/home';
 
@@ -35,7 +35,7 @@ export default function Index() {
     <div>
       {/* Hero Section */}
       <section className={hero}>
-        <div className={container}>
+        <div className={heroCard}>
           <h1 className={heroTitle}>{homeContent.hero.title}</h1>
           <p className={heroSubtitle}>{homeContent.hero.subtitle}</p>
           <div className={ctaButtons}>
@@ -54,34 +54,33 @@ export default function Index() {
       </section>
 
       {/* The Story Section */}
-      <section className={section}>
-        <div className={container}>
+      <section className={contentSection}>
+        <div className={contentCard}>
           <h3 className={sectionLabel}>{homeContent.story.title}</h3>
           <h2 className={sectionTitle}>{homeContent.story.subtitle}</h2>
           <div className={storyGrid}>
             <img src="/images/beepa.jpg" alt="Beepa (Walter Hopper)" className={beepaImage} />
-            <p className={contentParagraph}>{homeContent.story.content}</p>
+            <div>
+              <p className={contentParagraph}>{homeContent.story.content}</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* How It Started Section */}
-      <section className={section} style={{ backgroundColor: vars.color.background.secondary }}>
-        <div className={container}>
+      <section className={contentSection}>
+        <div className={contentCard}>
           <h3 className={sectionLabel}>{homeContent.started.title}</h3>
           <h2 className={sectionTitle}>{homeContent.started.subtitle}</h2>
-          {/* Render the started content paragraphs */}
           {homeContent.started.content.split('\n\n').map((block, idx) => (
             <p key={idx} className={contentParagraph}>
               {block}
             </p>
           ))}
 
-          {/* Render awards from data, like whatWeMake.principles */}
           {homeContent.started.awards && homeContent.started.awards.length > 0 && (
-            <div className={clsx(contentContainer, awardsSection)}>
+            <div className={awardsSection}>
               <h4 className={sectionLabel}>{homeContent.started.awardsTitle}</h4>
-              {/* Layout: image on the left, awards list on the right (vanilla-extract classes) */}
               <div className={awardsLayout}>
                 <div className={awardsImageCol}>
                   <img
@@ -99,6 +98,17 @@ export default function Index() {
                       </li>
                     ))}
                   </ul>
+                  {homeContent.started.awardsLink && (
+                    <p className={contentParagraph}>
+                      <a
+                        href={homeContent.started.awardsLink.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {homeContent.started.awardsLink.text}
+                      </a>
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
@@ -107,14 +117,12 @@ export default function Index() {
       </section>
 
       {/* What We Make Section */}
-      <section className={section}>
-        <div className={container}>
+      <section className={contentSection}>
+        <div className={contentCard}>
           <h3 className={sectionLabel}>{homeContent.whatWeMake.title}</h3>
           <h2 className={sectionTitle}>{homeContent.whatWeMake.subtitle}</h2>
-          <p className={contentParagraph} style={{ marginBottom: vars.space.xl }}>
-            {homeContent.whatWeMake.content}
-          </p>
-          <div className={contentContainer}>
+          <p className={contentParagraph}>{homeContent.whatWeMake.content}</p>
+          <div>
             <p className={contentBold}>Every batch is made with the same mindset:</p>
             <ul className={principlesList}>
               {homeContent.whatWeMake.principles.map((principle, index) => (
@@ -137,8 +145,8 @@ export default function Index() {
       </section>
 
       {/* Closing Section */}
-      <section className={section} style={{ backgroundColor: vars.color.background.secondary }}>
-        <div className={container}>
+      <section className={contentSection}>
+        <div className={contentCard}>
           <h2 className={sectionTitle}>{homeContent.closing.title}</h2>
           <p className={clsx(contentParagraph, centeredContent)}>{homeContent.closing.content}</p>
         </div>

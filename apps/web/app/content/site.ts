@@ -9,7 +9,7 @@ export const siteInfo: SiteInfo = {
   phone: '(608) 555-JARS',
   address: 'Beloit, Wisconsin',
   social: {
-    facebook: 'https://facebook.com/beepasfoods',
+    facebook: 'https://www.facebook.com/beepas1',
     instagram: 'https://instagram.com/beepasfoods',
   },
 };

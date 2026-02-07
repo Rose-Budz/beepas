@@ -38,12 +38,11 @@ export const content = style({
   },
 });
 
-export const image = style({
+export const video = style({
   maxWidth: '95vw',
   maxHeight: '95vh',
   width: 'auto',
   height: 'auto',
-  objectFit: 'contain',
   borderRadius: vars.radius.sm,
 });
 
@@ -73,21 +72,4 @@ export const closeButton = style({
     outline: `2px solid ${vars.color.brand.primary}`,
     outlineOffset: '2px',
   },
-});
-
-export const triggerButton = style({
-  all: 'unset',
-  cursor: 'pointer',
-  display: 'inline-block',
-  border: 'none',
-  background: 'none',
-  padding: 0,
-  margin: 0,
-});
-
-export const triggerImage = style({
-  display: 'block',
-  width: '100%',
-  height: 'auto',
-  pointerEvents: 'none',
 });

@@ -1,13 +1,7 @@
 {
   "$schema": "https://unpkg.com/knip@latest/schema.json",
   "project": ["app/**/*.{ts,tsx}"],
-  "ignore": [
-    "**/*.css.ts",
-    "app/components/ui/LoadingSkeleton.tsx",
-    "app/content/home.ts",
-    "app/content/site.ts",
-    "app/utils/seo.ts"
-  ],
+  "ignore": [],
   "ignoreBinaries": ["react-router-serve"],
   "ignoreExportsUsedInFile": true
 }

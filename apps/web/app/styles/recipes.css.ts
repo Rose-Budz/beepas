@@ -7,10 +7,10 @@ export const button = recipe({
     borderRadius: vars.radius.md,
     border: 'none',
     fontFamily: vars.fontFamily.body,
-    fontSize: vars.fontSize.base,
+    fontSize: vars.fontSize.sm,
     fontWeight: vars.fontWeight.semibold,
-    lineHeight: vars.lineHeight.tight,
-    letterSpacing: vars.letterSpacing.normal,
+    letterSpacing: vars.letterSpacing.wide,
+    textTransform: 'uppercase',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
     display: 'inline-flex',
@@ -18,7 +18,7 @@ export const button = recipe({
     justifyContent: 'center',
     gap: vars.space.sm,
     ':hover': {
-      transform: 'translateY(-1px)',
+      transform: 'translateY(-2px)',
       boxShadow: vars.shadow.md,
     },
     ':active': {
@@ -30,25 +30,26 @@ export const button = recipe({
       primary: {
         backgroundColor: vars.color.brand.primary,
         color: vars.color.text.inverse,
+        boxShadow: vars.shadow.sm,
         ':hover': {
-          backgroundColor: vars.color.brand.secondary,
+          backgroundColor: '#A33D28',
           color: vars.color.text.inverse,
         },
       },
       secondary: {
-        backgroundColor: vars.color.background.secondary,
-        color: vars.color.text.primary,
-        border: `1px solid ${vars.color.border.medium}`,
+        backgroundColor: vars.color.brand.secondary,
+        color: vars.color.text.inverse,
+        boxShadow: vars.shadow.sm,
         ':hover': {
-          backgroundColor: vars.color.background.tertiary,
+          backgroundColor: '#4A3426',
         },
       },
       outline: {
         backgroundColor: 'transparent',
-        color: vars.color.brand.primary,
-        border: `2px solid ${vars.color.brand.primary}`,
+        color: vars.color.brand.secondary,
+        border: `2px solid ${vars.color.brand.secondary}`,
         ':hover': {
-          backgroundColor: vars.color.brand.primary,
+          backgroundColor: vars.color.brand.secondary,
           color: vars.color.text.inverse,
         },
       },
@@ -56,83 +57,20 @@ export const button = recipe({
     size: {
       sm: {
         padding: `${vars.space.xs} ${vars.space.md}`,
-        fontSize: vars.fontSize.sm,
+        fontSize: vars.fontSize.xs,
       },
       md: {
         padding: `${vars.space.sm} ${vars.space.lg}`,
-        fontSize: vars.fontSize.base,
+        fontSize: vars.fontSize.sm,
       },
       lg: {
         padding: `${vars.space.md} ${vars.space.xl}`,
-        fontSize: vars.fontSize.lg,
+        fontSize: vars.fontSize.sm,
       },
     },
   },
   defaultVariants: {
     variant: 'primary',
     size: 'md',
-  },
-});
-
-export const card = recipe({
-  base: {
-    backgroundColor: vars.color.background.secondary,
-    borderRadius: vars.radius.lg,
-    padding: vars.space.lg,
-    boxShadow: vars.shadow.sm,
-    border: `1px solid ${vars.color.border.light}`,
-  },
-  variants: {
-    elevation: {
-      flat: {
-        boxShadow: 'none',
-      },
-      raised: {
-        boxShadow: vars.shadow.md,
-      },
-      floating: {
-        boxShadow: vars.shadow.lg,
-      },
-    },
-  },
-  defaultVariants: {
-    elevation: 'raised',
-  },
-});
-
-export const imageContainer = recipe({
-  base: {
-    borderRadius: vars.radius.lg,
-    overflow: 'hidden',
-    display: 'block',
-  },
-  variants: {
-    background: {
-      // For images with white backgrounds, use white container
-      white: {
-        backgroundColor: vars.color.background.secondary,
-        padding: vars.space.md,
-      },
-      // For images with transparent or matching backgrounds
-      transparent: {
-        backgroundColor: 'transparent',
-      },
-      // For images that need visual separation
-      bordered: {
-        border: `2px solid ${vars.color.border.medium}`,
-        backgroundColor: vars.color.background.secondary,
-        padding: vars.space.sm,
-      },
-      // Ornate frame style (mimicking the logo's gold oval frame)
-      framed: {
-        border: `4px double ${vars.color.brand.secondary}`,
-        backgroundColor: vars.color.background.secondary,
-        padding: vars.space.md,
-        boxShadow: `inset 0 0 0 1px ${vars.color.border.light}`,
-      },
-    },
-  },
-  defaultVariants: {
-    background: 'white',
   },
 });

@@ -9,7 +9,7 @@ export function Header() {
   const links = [
     { to: '/', label: 'Home' },
     { to: '/products', label: 'Products' },
-    { to: '/gallery/images', label: 'Gallery' },
+    { to: '/gallery', label: 'Gallery' },
     { to: '/contact', label: 'Contact' },
   ];
 
@@ -39,7 +39,7 @@ export function Header() {
         </button>
       </nav>
 
-      <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} links={links} />
+      <MobileMenu isOpen={mobileMenuOpen} onOpenChange={setMobileMenuOpen} links={links} />
     </header>
   );
 }

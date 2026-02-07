@@ -30,6 +30,7 @@ export const vars = createThemeContract({
     lg: null,
     xl: null,
     '2xl': null,
+    '3xl': null,
   },
   fontSize: {
     xs: null,
@@ -40,11 +41,12 @@ export const vars = createThemeContract({
     '2xl': null,
     '3xl': null,
     '4xl': null,
+    '5xl': null,
   },
   fontFamily: {
     body: null,
     heading: null,
-    subheading: null,
+    accent: null,
   },
   fontWeight: {
     light: null,
@@ -69,36 +71,38 @@ export const vars = createThemeContract({
     sm: null,
     md: null,
     lg: null,
+    xl: null,
     full: null,
   },
   shadow: {
     sm: null,
     md: null,
     lg: null,
+    xl: null,
   },
 });
 
 export const lightTheme = createTheme(vars, {
   color: {
     brand: {
-      primary: '#F26522', // Brand Orange (from logo)
-      secondary: '#704214', // Sepia Walnut
-      accent: '#4A5D23', // Dill Green
+      primary: '#F26522', // Bright orange (matching logo)
+      secondary: '#5C4033', // Dark wood brown
+      accent: '#2E5A1C', // Forest green
     },
     background: {
-      primary: '#F9F4ED', // Cream/Parchment
-      secondary: '#FFFFFF', // White (for images with white backgrounds)
-      tertiary: '#F5E6D3', // Slightly darker cream
+      primary: '#FDF8F3', // Warm cream
+      secondary: '#FFFFFF', // Clean white for cards
+      tertiary: '#F5EDE4', // Warm tan
     },
     text: {
-      primary: '#2D2926', // Charcoal
-      secondary: '#704214', // Sepia Walnut (for secondary text)
-      inverse: '#F9F4ED', // Cream for text on dark backgrounds
+      primary: '#2C2416', // Deep brown-black
+      secondary: '#5C4033', // Wood brown
+      inverse: '#FDF8F3', // Cream for dark backgrounds
     },
     border: {
-      light: '#E8D5C4',
-      medium: '#704214', // Sepia Walnut
-      dark: '#2D2926', // Charcoal
+      light: '#E8DDD0',
+      medium: '#C9B8A5',
+      dark: '#5C4033',
     },
   },
   space: {
@@ -108,22 +112,23 @@ export const lightTheme = createTheme(vars, {
     lg: '1.5rem',
     xl: '2rem',
     '2xl': '3rem',
+    '3xl': '4rem',
   },
   fontSize: {
-    xs: '0.875rem', // Increased from 0.75rem
-    sm: '1rem', // Increased from 0.875rem
-    base: '1.125rem', // Increased from 1rem - better readability
-    lg: '1.25rem', // Increased from 1.125rem
-    xl: '1.5rem', // Increased from 1.25rem
-    '2xl': '1.875rem', // Increased from 1.5rem
-    '3xl': '2.25rem', // Increased from 1.875rem
-    '4xl': '3rem', // Increased from 2.25rem
+    xs: '0.75rem',
+    sm: '0.875rem',
+    base: '1rem',
+    lg: '1.125rem',
+    xl: '1.25rem',
+    '2xl': '1.5rem',
+    '3xl': '2rem',
+    '4xl': '2.5rem',
+    '5xl': '3.5rem',
   },
   fontFamily: {
-    body: '"Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-    heading: '"Alfa Slab One", "Impact", "Arial Black", sans-serif',
-    subheading:
-      '"Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif', // Same as body
+    body: '"Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    heading: '"Seagull Bold", "Georgia", serif',
+    accent: '"Montserrat", sans-serif',
   },
   fontWeight: {
     light: '300',
@@ -133,26 +138,28 @@ export const lightTheme = createTheme(vars, {
     bold: '700',
   },
   lineHeight: {
-    tight: '1.2',
-    snug: '1.4',
-    normal: '1.6',
-    relaxed: '1.8',
+    tight: '1.1',
+    snug: '1.3',
+    normal: '1.5',
+    relaxed: '1.7',
     loose: '2',
   },
   letterSpacing: {
-    tight: '0', // Removed negative spacing
-    normal: '0.01em', // Slightly more open
-    wide: '0.08em', // More open for uppercase
+    tight: '-0.02em',
+    normal: '0',
+    wide: '0.05em',
   },
   radius: {
-    sm: '8px',
-    md: '12px',
-    lg: '16px',
+    sm: '4px',
+    md: '8px',
+    lg: '12px',
+    xl: '20px',
     full: '9999px',
   },
   shadow: {
-    sm: '0 1px 2px rgba(112, 66, 20, 0.1)',
-    md: '0 4px 6px rgba(112, 66, 20, 0.15)',
-    lg: '0 10px 15px rgba(112, 66, 20, 0.2)',
+    sm: '0 1px 3px rgba(44, 36, 22, 0.1)',
+    md: '0 4px 12px rgba(44, 36, 22, 0.12)',
+    lg: '0 8px 24px rgba(44, 36, 22, 0.15)',
+    xl: '0 16px 48px rgba(44, 36, 22, 0.2)',
   },
 });

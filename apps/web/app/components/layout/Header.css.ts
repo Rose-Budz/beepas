@@ -2,13 +2,12 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '@/styles/theme.css';
 
 export const header = style({
-  backgroundColor: vars.color.background.secondary,
-  borderBottom: `2px solid ${vars.color.border.medium}`,
+  backgroundColor: vars.color.brand.secondary,
   padding: `${vars.space.md} ${vars.space.lg}`,
   position: 'sticky',
   top: 0,
   zIndex: 100,
-  boxShadow: vars.shadow.sm,
+  boxShadow: vars.shadow.lg,
 });
 
 export const nav = style({
@@ -20,33 +19,33 @@ export const nav = style({
 });
 
 export const logo = style({
-  fontFamily: vars.fontFamily.heading,
-  fontSize: vars.fontSize['2xl'],
-  fontWeight: vars.fontWeight.normal, // Alfa Slab One only has 400 weight
-  lineHeight: vars.lineHeight.tight,
-  letterSpacing: vars.letterSpacing.tight,
-  color: vars.color.brand.primary,
-  textDecoration: 'none',
   display: 'flex',
   alignItems: 'center',
+  borderRadius: vars.radius.lg,
+  backgroundColor: vars.color.background.secondary,
+  border: `1px solid ${vars.color.border.light}`,
+  boxShadow: vars.shadow.md,
+  transition: 'background-color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease',
+  overflow: 'hidden',
   ':hover': {
-    opacity: 0.8,
+    opacity: 0.95,
   },
 });
 
 export const logoImage = style({
-  height: '50px',
+  height: '60px',
   width: 'auto',
+  display: 'block',
   '@media': {
     '(max-width: 768px)': {
-      height: '40px',
+      height: '48px',
     },
   },
 });
 
 export const navLinks = style({
   display: 'flex',
-  gap: vars.space.lg,
+  gap: vars.space.xl,
   listStyle: 'none',
   margin: 0,
   padding: 0,
@@ -59,15 +58,18 @@ export const navLinks = style({
 
 export const navLink = style({
   fontFamily: vars.fontFamily.body,
-  fontSize: vars.fontSize.base,
+  fontSize: vars.fontSize.sm,
   fontWeight: vars.fontWeight.semibold,
-  lineHeight: vars.lineHeight.snug,
-  letterSpacing: vars.letterSpacing.normal,
-  color: vars.color.text.primary,
+  letterSpacing: vars.letterSpacing.wide,
+  textTransform: 'uppercase',
+  color: vars.color.text.inverse,
   textDecoration: 'none',
-  transition: 'color 0.2s ease',
+  padding: `${vars.space.sm} ${vars.space.md}`,
+  borderRadius: vars.radius.md,
+  transition: 'all 0.2s ease',
   ':hover': {
-    color: vars.color.brand.primary,
+    backgroundColor: 'rgba(255, 255, 255, 0.15)',
+    color: vars.color.text.inverse,
   },
 });
 
@@ -75,13 +77,17 @@ export const mobileMenuButton = style({
   display: 'none',
   '@media': {
     '(max-width: 768px)': {
-      display: 'block',
-      background: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: 'rgba(255, 255, 255, 0.15)',
       border: 'none',
-      fontSize: vars.fontSize['2xl'],
-      color: vars.color.brand.primary,
-      cursor: 'pointer',
+      borderRadius: vars.radius.md,
       padding: vars.space.sm,
+      color: vars.color.text.inverse,
+      fontSize: vars.fontSize.xl,
+      width: '44px',
+      height: '44px',
     },
   },
 });
