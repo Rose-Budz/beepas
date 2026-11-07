@@ -41,14 +41,17 @@ export default [
           ignoreRestSiblings: true,
         },
       ],
-      '@cspell/spellchecker': ['warn', {
-        autoFix: true,
-        checkComments: true,
-        checkStrings: true,
-        checkIdentifiers: true,
-        checkStringTemplates: true,
-        checkJSXText: true,
-      }],
+      '@cspell/spellchecker': [
+        'warn',
+        {
+          autoFix: true,
+          checkComments: true,
+          checkStrings: true,
+          checkIdentifiers: true,
+          checkStringTemplates: true,
+          checkJSXText: true,
+        },
+      ],
     },
   },
   // Allow unused exports in content and types files (they're API files)

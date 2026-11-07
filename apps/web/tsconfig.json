@@ -1,5 +1,5 @@
 {
-  "include": ["app/**/*"],
+  "include": ["app/**/*", "vite.config.ts", "react-router.config.ts"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "types": ["@react-router/node", "vite/client", "node"],

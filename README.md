@@ -1,141 +1,98 @@
-# Beepas
+# Beepa's
 
-A modern web application built with React Router and Vanilla Extract CSS.
-
-## Initial Setup (First Time)
-
-If you haven't pushed this to GitHub yet:
-
-```bash
-# Make the setup script executable and run it
-chmod +x setup-github.sh
-./setup-github.sh
-
-# Create and push to GitHub in Rose-Budz organization (public repo)
-gh repo create Rose-Budz/beepas --public --source=. --remote=origin --push
-
-# Or for a private repo in Rose-Budz organization
-gh repo create Rose-Budz/beepas --private --source=. --remote=origin --push
-```
-
-The setup script will:
-- ✅ Initialize git repository
-- ✅ Install all dependencies
-- ✅ Set up git hooks
-- ✅ Create initial commit
-
-## Quick Start
-
-### Install Dependencies
-```bash
-pnpm install
-```
-
-### Development
-```bash
-pnpm dev
-```
-
-### Build
-```bash
-pnpm build
-```
-
-## Quality Checks
-
-### Run All Checks
-```bash
-pnpm check  # Runs typecheck, lint, format check, spell check, and knip
-```
-
-### Auto-Fix All Issues
-```bash
-pnpm fix  # Runs lint:fix, format, and knip:fix
-```
-
-### Individual Commands
-
-**Linting:**
-```bash
-pnpm lint        # Check for linting issues
-pnpm lint:fix    # Auto-fix linting issues
-```
-
-**Formatting:**
-```bash
-pnpm format:check  # Check formatting
-pnpm format        # Auto-format code
-```
-
-**Type Checking:**
-```bash
-pnpm typecheck
-```
-
-**Spell Check:**
-```bash
-pnpm spell
-```
-
-**Unused Code Detection:**
-```bash
-pnpm knip        # Check for unused code
-pnpm knip:fix    # Auto-remove unused exports
-```
-
-**Pre-commit Hook:**
-```bash
-pnpm pre-commit  # Test pre-commit hooks manually
-```
-
-## Git Hooks
-
-This project uses [Lefthook](https://github.com/evilmartians/lefthook) for git hooks.
-
-### Pre-commit Hook
-Automatically runs before each commit:
-- ✅ Auto-fixes linting issues
-- ✅ Auto-formats code
-- ✅ Auto-fixes unused exports
-- ⚠️ Shows spell check warnings (non-blocking)
-- 🚫 Fails on type errors (manual fix required)
-
-The hooks are automatically installed when you run `pnpm install`.
-
-## Project Structure
-
-```
-beepas/
-├── apps/
-│   └── web/           # Main web application
-│       ├── app/       # Application code
-│       │   ├── routes/      # Page routes
-│       │   ├── components/  # React components
-│       │   ├── content/     # Static content
-│       │   ├── styles/      # Vanilla Extract styles
-│       │   └── utils/       # Utility functions
-│       └── public/    # Static assets
-└── package.json       # Root package configuration
-```
+Marketing and product showcase web application for **Beepa's Country Goods** (_"Made Local. Made Right."_ — Wisconsin jarred & canned goods), built as a TypeScript monorepo with Turborepo, React Router v7 (SSR), Vanilla Extract CSS, and Radix UI.
 
 ## Tech Stack
 
-- **Framework:** [React Router v7](https://reactrouter.com/)
-- **Styling:** [Vanilla Extract](https://vanilla-extract.style/)
-- **Type Safety:** TypeScript
-- **Code Quality:** ESLint, Prettier, Knip, CSpell
-- **Git Hooks:** Lefthook
-- **Build Tool:** Vite
-- **Package Manager:** pnpm
+- **Monorepo & Package Manager**: [Turborepo](https://turbo.build/) + [pnpm](https://pnpm.io/) (`pnpm@10.28.1`)
+- **Framework**: [React 18](https://react.dev/) + [React Router v7](https://reactrouter.com/) (Server-Side Rendering)
+- **Bundler**: [Vite 6](https://vite.dev/)
+- **Styling**: [Vanilla Extract](https://vanilla-extract.style/) (`@vanilla-extract/css` & `@vanilla-extract/recipes`)
+- **UI Primitives**: [Radix UI](https://www.radix-ui.com/primitives) (`radix-ui`)
+- **Quality & Security**: TypeScript 5.9, ESLint 9 (`jsx-a11y`, `react-hooks`, `@cspell/eslint-plugin`), Prettier, CSpell, Knip, Lefthook, GitHub Actions CI, Dependabot
+- **Hosting**: [Vercel](https://vercel.com/) (`https://beepas.vercel.app`)
 
-## Contributing
+## Prerequisites
 
-1. Make your changes
-2. Run `pnpm fix` to auto-fix issues
-3. Run `pnpm check` to ensure everything passes
-4. Commit (pre-commit hooks will run automatically)
-5. Push your changes
+- **Node.js**: `>= 22.0.0` (Node `24` LTS recommended — see [`.nvmrc`](.nvmrc))
+- **pnpm**: `10.28.1` (enable via `corepack enable` or standalone pnpm)
 
-## License
+## Quick Start
 
-Private project
+```bash
+# Install workspace dependencies (also installs Lefthook git hooks locally)
+pnpm install
+
+# Start the development server at http://localhost:5173
+pnpm dev
+
+# Build client + SSR production bundles
+pnpm build
+
+# Preview the production SSR build locally
+pnpm --filter web start
+```
+
+## Scripts
+
+Run from the repository root:
+
+| Command             | Description                                                                    |
+| ------------------- | ------------------------------------------------------------------------------ |
+| `pnpm dev`          | Start the Vite + React Router SSR dev server (`http://localhost:5173`)         |
+| `pnpm build`        | Build production client and server bundles (`apps/web/build/`)                 |
+| `pnpm check`        | Run all checks: `typecheck`, `lint`, `spell`, `knip`, and `format:check`       |
+| `pnpm fix`          | Auto-fix lint issues, remove unused exports (`knip --fix`), and format files   |
+| `pnpm typecheck`    | Run strict TypeScript type checking (`tsc --noEmit`)                           |
+| `pnpm lint`         | Run ESLint across TypeScript/React files                                       |
+| `pnpm lint:fix`     | Auto-fix ESLint issues                                                         |
+| `pnpm format`       | Format all `.ts`, `.tsx`, `.js`, `.json`, `.md`, `.yml`, and `.css` files      |
+| `pnpm format:check` | Check Prettier formatting across the repository                                |
+| `pnpm spell`        | Run CSpell dictionary checks on `apps/web/app/**/*.{ts,tsx}`                   |
+| `pnpm knip`         | Detect unused files, dependencies, and exports                                 |
+| `pnpm knip:fix`     | Auto-remove unused exports and dependencies                                    |
+| `pnpm pre-commit`   | Manually run Lefthook pre-commit checks                                        |
+| `pnpm clean`        | Remove build outputs, `.turbo`/`.react-router` caches, and root `node_modules` |
+
+## Repository Structure
+
+```text
+beepas/
+├── .github/workflows/
+│   └── ci.yml                 # GitHub Actions CI (audit, check, build)
+├── apps/
+│   └── web/                   # React Router v7 SSR web application
+│       ├── app/
+│       │   ├── components/    # Layout (Header, Footer, MobileMenu) & UI (Button, Dialogs, Cards)
+│       │   ├── content/       # Typed static content (home, products, gallery, contact, site)
+│       │   ├── routes/        # Route modules (_index, products, gallery, contact)
+│       │   ├── styles/        # Vanilla Extract theme contract, recipes, utilities, global styles
+│       │   ├── types/         # Shared content TypeScript interfaces
+│       │   ├── entry.client.tsx
+│       │   ├── entry.server.tsx
+│       │   ├── root.tsx
+│       │   └── routes.ts      # Explicit route table
+│       ├── public/            # Static assets (fonts, product/gallery images, logos, icons)
+│       └── vercel.json        # Static asset HTTP security headers
+├── AGENTS.md                  # Instructions & conventions for AI coding agents
+├── CLAUDE.md                  # Pointer to AGENTS.md for Claude Code
+├── lefthook.yml               # Pre-commit hook configuration
+├── package.json               # Workspace root scripts & tooling
+├── pnpm-workspace.yaml        # Workspace packages & security overrides
+└── turbo.json                 # Turborepo task pipeline
+```
+
+See [`apps/web/README.md`](apps/web/README.md) for detailed documentation on routes, content editing, Vanilla Extract theming, and Radix UI components.
+
+## Git Hooks & CI/CD
+
+- **Pre-commit Hooks ([`lefthook.yml`](lefthook.yml))**: Automatically installed on `pnpm install` (outside CI/Vercel). Runs ESLint (`--fix`), Prettier (`--write`), TypeScript type checking, CSpell, and Knip in parallel on staged changes.
+- **Continuous Integration ([`.github/workflows/ci.yml`](.github/workflows/ci.yml))**: Runs on pushes to `master` and pull requests on Node 24 — enforces `pnpm audit --audit-level=low`, `pnpm check`, and `pnpm build`.
+- **Deployment**: Pushes to `master` automatically build and deploy to Vercel with matching HTTP security headers in `apps/web/app/entry.server.tsx` and `apps/web/vercel.json`.
+
+## Working with AI Coding Tools
+
+This repository includes first-class context for AI coding assistants (Antigravity, Claude Code, Cursor, GitHub Copilot, Codex):
+
+- [`AGENTS.md`](AGENTS.md) documents workspace commands, route registration, Vanilla Extract & Radix UI patterns, CSpell/Knip guardrails, and deployment constraints.
+- [`CLAUDE.md`](CLAUDE.md) imports `@AGENTS.md` automatically.

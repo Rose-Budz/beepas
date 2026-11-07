@@ -1,0 +1,7 @@
+node_modules/
+dist/
+build/
+.react-router/
+.turbo/
+.vercel/
+pnpm-lock.yaml
