@@ -5,6 +5,14 @@ import { PassThrough } from 'stream';
 
 const ABORT_DELAY = 5000;
 
+const SECURITY_HEADERS: Record<string, string> = {
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+  'Content-Security-Policy': "frame-ancestors 'none'; base-uri 'self'; object-src 'none'",
+};
+
 export default function handleRequest(
   request: Request,
   responseStatusCode: number,
@@ -29,6 +37,11 @@ export default function handleRequest(
           });
 
           responseHeaders.set('Content-Type', 'text/html');
+          for (const [header, value] of Object.entries(SECURITY_HEADERS)) {
+            if (!responseHeaders.has(header)) {
+              responseHeaders.set(header, value);
+            }
+          }
 
           resolve(
             new Response(stream, {

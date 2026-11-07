@@ -4,3 +4,7 @@ packages:
 ignoredBuiltDependencies:
   - esbuild
   - lefthook
+
+overrides:
+  esbuild@>=0.27.3 <0.28.1: ^0.28.2
+  minimatch@>=7.0.0 <11.0.1: ^11.0.5
