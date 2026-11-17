@@ -23,6 +23,15 @@ export const footerText = style({
   opacity: 0.9,
 });
 
+export const footerLink = style({
+  color: vars.color.text.inverse,
+  textDecoration: 'underline',
+  textUnderlineOffset: '3px',
+  ':hover': {
+    opacity: 0.8,
+  },
+});
+
 export const socialLinks = style({
   display: 'flex',
   justifyContent: 'center',
