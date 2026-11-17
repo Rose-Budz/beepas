@@ -2,6 +2,7 @@ import {
   footer,
   footerContent,
   footerText,
+  footerLink,
   socialLinks,
   socialLink,
   socialIcon,
@@ -14,6 +15,16 @@ export function Footer() {
       <div className={footerContent}>
         <p className={footerText}>© {new Date().getFullYear()} Beepa's. All rights reserved.</p>
         <p className={footerText}>Made Local. Made Right. | Beloit, Wisconsin</p>
+        <p className={footerText}>
+          <a
+            href="https://rosebudz.tech"
+            className={footerLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Website by RoseBudz
+          </a>
+        </p>
         <div className={socialLinks}>
           {siteInfo.social?.facebook && (
             <a
